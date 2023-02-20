@@ -9,7 +9,7 @@ LIGHTHOUSE=lighthouse-v3.4.0
          echo -e "$GREEN_COLOR Stop services $NO_COLOR\n"
          sudo systemctl stop erigon.service lighthouse.service
 
-              for (( timer=5; timer>0; timer-- )); do
+              for (( timer=60; timer>0; timer-- )); do
                      printf "* waiting for services stoped correctly ${RED_COLOR}%02d${NO_COLOR} sec\r" $timer
                      sleep 1
               done
@@ -32,7 +32,7 @@ LIGHTHOUSE=lighthouse-v3.4.0
          echo -e "$GREEN_COLOR Restart services... $NO_COLOR\n"
          sudo systemctl restart erigon.service lighthouse.service
 
-              for (( timer=5; timer>0; timer-- )); do
+              for (( timer=30; timer>0; timer-- )); do
                      printf "* waiting for services start correctly ${RED_COLOR}%02d${NO_COLOR} sec\r" $timer
                      sleep 1
               done
