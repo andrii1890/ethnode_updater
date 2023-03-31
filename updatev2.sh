@@ -27,13 +27,15 @@ LIGHTHOUSE=v4.0.1
          git checkout $ERIGON
          make erigon && cd build/bin/ && sudo cp erigon /usr/local/bin/
         
+        
          echo -e "$GREEN_COLOR Clone Lighthouse repo...build binaries...move to working folder $LIGHTHOUSE... $NO_COLOR\n"
+         cd $HOME/
          git clone https://github.com/sigp/lighthouse.git
          latestTag=$(curl -s https://api.github.com/repos/sigp/lighthouse/releases/latest | grep '.tag_name'|cut -d\" -f4)
          echo $latestTag
          cd lighthouse
          git checkout $latestTag
-         make
+         make && cd build/bin/ && sudo cp lighthouse /usr/local/bin/
          
          echo -e "$GREEN_COLOR Restart services... $NO_COLOR\n"
          sudo systemctl restart erigon.service lighthouse.service
