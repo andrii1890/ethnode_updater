@@ -35,7 +35,7 @@ LIGHTHOUSE=v4.0.1
          echo $latestTag
          cd lighthouse
          git checkout $latestTag
-         make && cd build/bin/ && sudo cp lighthouse /usr/local/bin/
+         make && cd $HOME/.cargo/bin/ && sudo cp lighthouse /usr/local/bin/
          
          echo -e "$GREEN_COLOR Restart services... $NO_COLOR\n"
          sudo systemctl restart erigon.service lighthouse.service
