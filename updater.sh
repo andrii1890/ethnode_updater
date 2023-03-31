@@ -2,7 +2,7 @@
 GREEN_COLOR='\033[0;32m'
 RED_COLOR='\033[0;31m'
 NO_COLOR='\033[0m'
-ERIGON=erigon_v2.41.0
+ERIGON=erigon_v2.42.0
 LIGHTHOUSE=lighthouse-v4.0.1
 
          echo -e "$GREEN_COLOR Script will update ERIGON and LIGHTHOUSE to version: $ERIGON and $LIGHTHOUSE $NO_COLOR\n"
@@ -16,7 +16,7 @@ LIGHTHOUSE=lighthouse-v4.0.1
 
          cd $HOME
          echo -e "$GREEN_COLOR Download $ERIGON... $NO_COLOR\n"
-         wget -O erigon.tar.gz https://github.com/ledgerwatch/erigon/releases/download/v2.41.0/erigon_2.41.0_linux_amd64.tar.gz
+         wget -O erigon.tar.gz https://github.com/ledgerwatch/erigon/releases/download/v2.42.0/erigon_2.42.0_linux_amd64.tar.gz
          echo -e "$GREEN_COLOR Download $LIGHTHOUSE... $NO_COLOR\n"
          wget -O lighthouse.tar.gz https://github.com/sigp/lighthouse/releases/download/v4.0.1/lighthouse-v4.0.1-x86_64-unknown-linux-gnu.tar.gz
          echo -e "$GREEN_COLOR Unpack $ERIGON... $NO_COLOR\n"
