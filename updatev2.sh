@@ -16,7 +16,7 @@ LIGHTHOUSE=v4.0.1
          sudo apt install -y git gcc g++ make cmake pkg-config llvm-dev libclang-dev clang protobuf-compiler
          
          echo -e "$GREEN_COLOR Install Rust... $NO_COLOR\n"
-         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && source "$HOME/.cargo/env"
          
          echo -e "$GREEN_COLOR Delete previous erigon and lighthouse folder $NO_COLOR\n"
          cd $HOME && rm -rf erigon/ lighthouse/
