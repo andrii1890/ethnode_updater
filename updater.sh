@@ -15,20 +15,26 @@ LIGHTHOUSE=lighthouse-v4.0.1
               done
 
          cd $HOME
-         echo -e "$GREEN_COLOR Download $ERIGON... $NO_COLOR\n"
-         wget -O erigon.tar.gz https://github.com/ledgerwatch/erigon/releases/download/v2.42.0/erigon_2.42.0_linux_amd64.tar.gz
+         
+         echo -e "$GREEN_COLOR Delete previous erigon and lighthouse installation folder $NO_COLOR\n"
+         cd $HOME && rm -rf erigon/ lighthouse/
+         
+         echo -e "$GREEN_COLOR Clone erigon repo...build binaries...move to working folder $ERIGON... $NO_COLOR\n"
+         git clone https://github.com/ledgerwatch/erigon.git
+         cd erigon
+         git checkout $ERIGON
+         make erigon && cd build/bin/ && sudo cp erigon /usr/local/bin
+         
          echo -e "$GREEN_COLOR Download $LIGHTHOUSE... $NO_COLOR\n"
          wget -O lighthouse.tar.gz https://github.com/sigp/lighthouse/releases/download/v4.0.1/lighthouse-v4.0.1-x86_64-unknown-linux-gnu.tar.gz
-         echo -e "$GREEN_COLOR Unpack $ERIGON... $NO_COLOR\n"
-         tar xzfv erigon.tar.gz
          echo -e "$GREEN_COLOR Unpack $LIGHTHOUSE... $NO_COLOR\n"
          tar xzfv lighthouse.tar.gz
          echo -e "$GREEN_COLOR Make files executable... $NO_COLOR\n"
-         sudo chown root:root erigon lighthouse && sudo chmod +x erigon lighthouse
+         sudo chown root:root lighthouse && sudo chmod +x lighthouse
          echo -e "$GREEN_COLOR Delete downloaded files... $NO_COLOR\n"
-         rm -f -v erigon.tar.gz* lighthouse.tar.gz* README.md
+         rm -f -v lighthouse.tar.gz* README.md
          echo -e "$GREEN_COLOR Move binaries to working folder... $NO_COLOR\n"
-         sudo mv erigon lighthouse /usr/local/bin/
+         sudo mv lighthouse /usr/local/bin/
          echo -e "$GREEN_COLOR Restart services... $NO_COLOR\n"
          sudo systemctl restart erigon.service lighthouse.service
          echo -e "$GREEN_COLOR Check ERIGON and LIGHTHOUSE version..."
