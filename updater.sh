@@ -2,8 +2,8 @@
 GREEN_COLOR='\033[0;32m'
 RED_COLOR='\033[0;31m'
 NO_COLOR='\033[0m'
-ERIGON=erigon_v2.42.0
-LIGHTHOUSE=lighthouse-v4.0.1
+ERIGON=v2.42.0
+LIGHTHOUSE=v4.0.1
 
          echo -e "$GREEN_COLOR Script will update ERIGON and LIGHTHOUSE to version: $ERIGON and $LIGHTHOUSE $NO_COLOR\n"
          echo -e "$GREEN_COLOR Stop services... $NO_COLOR\n"
