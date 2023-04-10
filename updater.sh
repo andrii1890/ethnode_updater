@@ -1,4 +1,4 @@
-  GNU nano 6.2                                                                                                     updater.sh                                                                                                               #!/bin/bash
+#!/bin/bash
 #LATEST_RELEASE_ERIGON=LRE
 #LATEST_VERSION_ERIGON=LVE
 #LATEST_RELEASE_LIGHTHOUSE=LRL
