@@ -9,7 +9,7 @@ LIGHTHOUSE=v4.0.1
          echo -e "$GREEN_COLOR Stop services... $NO_COLOR\n"
          sudo systemctl stop erigon.service lighthouse.service
 
-              for (( timer=10; timer>0; timer-- )); do
+              for (( timer=60; timer>0; timer-- )); do
                      printf "* waiting for services stopped correctly ${RED_COLOR}%02d${NO_COLOR} sec\r" $timer
                      sleep 1
               done
