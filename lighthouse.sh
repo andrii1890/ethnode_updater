@@ -9,7 +9,7 @@ LVL=$(echo $LRL | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
 LIGHTHOUSE=lighthouse-$LVL
 
 
-         echo -e "$GREEN_COLOR Script will update LIGHTHOUSE to version: $ERIGON and $LIGHTHOUSE $NO_COLOR\n"
+         echo -e "$GREEN_COLOR Script will update LIGHTHOUSE to version: $LIGHTHOUSE $NO_COLOR\n"
          echo -e "$GREEN_COLOR Stop services... $NO_COLOR\n"
          sudo systemctl stop lighthouse.service
 
