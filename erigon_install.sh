@@ -19,6 +19,6 @@ ERIGON=erigon-$LVE
          make erigon && cd build/bin/ && sudo cp erigon /usr/local/bin
          
          echo -e "$GREEN_COLOR Cleaning after installation... $NO_COLOR\n"
-         cd $HOME && rm -rf erigon/
+         cd $HOME && rm -rf erigon/ rm erigon_install.sh
          echo -e "$GREEN_COLOR Check ERIGON version..."
          erigon -v
