@@ -11,14 +11,14 @@ ERIGON=erigon-$LVE
 
 
          echo -e "$GREEN_COLOR Script will download the latest Erigon version: $ERIGON $NO_COLOR\n"
-
+         cd $HOME && mkdir temp_erigon && cd temp_erigon
          echo -e "$GREEN_COLOR Clone erigon repo > build binaries > move to working folder $ERIGON $NO_COLOR\n"
          git clone https://github.com/ledgerwatch/erigon.git
          cd erigon
          git checkout $LVE
-         make erigon && cd build/bin/ && sudo cp erigon /usr/local/bin
+         make erigon && cd build/bin/ && sudo cp * /usr/local/bin
          
          echo -e "$GREEN_COLOR Cleaning after installation... $NO_COLOR\n"
-         cd $HOME && rm -rf erigon/ rm erigon_install.sh
+         cd $HOME && rm -rf temp_erigon rm erigon_install.sh
          echo -e "$GREEN_COLOR Check ERIGON version..."
          erigon -v
