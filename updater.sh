@@ -4,7 +4,7 @@
 GREEN_COLOR='\033[0;32m'
 RED_COLOR='\033[0;31m'
 NO_COLOR='\033[0m'
-LRE=$(curl -L -s -H 'Accept: application/json' https://github.com/ledgerwatch/erigon/releases/latest)
+LRE=$(curl -L -s -H 'Accept: application/json' https://github.com/erigontech/erigon/releases/latest)
 LVE=$(echo $LRE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
 ERIGON=erigon-$LVE
 
@@ -15,7 +15,7 @@ ERIGON=erigon-$LVE
          sudo systemctl stop erigon.service
          cd $HOME && mkdir temp_erigon && cd temp_erigon
          echo -e "$GREEN_COLOR Clone erigon repo > build binaries > move to working folder $ERIGON $NO_COLOR\n"
-         git clone https://github.com/ledgerwatch/erigon.git
+         git clone https://github.com/erigontech/erigon
          cd erigon
          git checkout $LVE
          make erigon && cd build/bin/ && sudo cp * /usr/local/bin
